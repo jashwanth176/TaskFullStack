@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A minimal task manager with a paper-like interface">
+  <title>Tasks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="dots"></canvas>
+
+  <main id="app">
+    <h1>Tasks</h1>
+
+    <form id="entry-form">
+      <input
+        type="text"
+        id="field"
+        placeholder="Write something to do..."
+        maxlength="200"
+        autocomplete="off"
+        required
+      >
+      <button type="submit">Add</button>
+    </form>
+
+    <nav id="filters" aria-label="Filter tasks">
+      <button data-filter="all" class="on">All</button>
+      <button data-filter="active">Active</button>
+      <button data-filter="done">Done</button>
+    </nav>
+
+    <div id="loader">
+      <span></span><span></span><span></span>
+    </div>
+
+    <section id="list" aria-label="Task list"></section>
+
+    <p id="count"></p>
+  </main>
+
+  <div id="toast" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
