@@ -22,8 +22,6 @@ Open [http://localhost:3000](http://localhost:3000)
 npm run dev
 ```
 
-Uses `--watch` for auto-reload on file changes (Node 18+).
-
 ## Docker
 
 ```bash
@@ -40,12 +38,7 @@ docker run -p 3000:3000 task-manager
 | `PATCH`  | `/tasks/:id`   | `{ completed?, title? }` | `{ task: {...} }`   |
 | `DELETE` | `/tasks/:id`   | —                        | `204`               |
 
-## Assumptions and Trade-offs
 
-- **File-based storage** (`data/tasks.json`) — chosen over a database for zero-config setup while still persisting tasks across restarts.
-- **Synchronous file I/O** — acceptable for a single-user exercise; keeps the code straightforward without introducing race conditions.
-- **No build tools** — the frontend is plain HTML, CSS, and JavaScript served as static files. No transpilation or bundling step required.
-- **Validation** is intentionally minimal: title required, max 200 characters, correct types on PATCH. No authentication or authorization.
 
 ## Features
 
